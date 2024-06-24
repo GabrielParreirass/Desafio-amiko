@@ -7,7 +7,7 @@ const db = mongoose.connection;
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://gepeto:Alimento@cluster0.kg0uz.mongodb.net/DesafioAmiko"
+  "mongodb+srv://gepeto:#######@cluster0.kg0uz.mongodb.net/DesafioAmiko"
 );
 
 app.use(express.json());
