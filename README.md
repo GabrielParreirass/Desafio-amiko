@@ -84,3 +84,23 @@ Pelo terminal, abra a pasta onde se econtram os arquivos e insira o código "npm
 No mesmo terminal execute o comando "npm run dev", após isso, o servidor deverá começar a rodar!
 
 !! É PRECISO ALTERAR A STRING DE CONEXÃO COM O BANCO DE DADOS, INSERINDO A SENHA CORRETA
+
+# Formato das requisições
+
+Para inserir chamados é preciso fazer uma requisição POST para htpp://localhost:3030/calls com o seguinte formato:
+```json
+{
+  "name":"Mensagem do paciente",
+  "hospital":{
+    "hospitalName":"Nome do hospital",
+    "roomNumber": 401
+  }
+}
+```
+
+Para inserir chamados é preciso fazer uma requisição GET para htpp://localhost:3030/calls com o seguinte formato e o numero do quarto desejado:
+```json
+{
+    "roomNumber": 401
+}
+```
