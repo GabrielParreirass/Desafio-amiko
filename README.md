@@ -33,7 +33,7 @@ ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usu
 
     
 
-ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo usuário e armazená-los no banco de dados
+ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo usuário e armazená-los no banco de dados e tratando as condições especificadas no desafio.
 
     app.post("/calls", async (req, res) => {
           const msg = req.body.msg;
