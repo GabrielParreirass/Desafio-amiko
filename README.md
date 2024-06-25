@@ -68,3 +68,5 @@ Para a execução do código na sua máquina ser bem sucedida, é necessária a 
 Abra a pasta onde se encontram os arquivos pelo terminal e insira o código "npm i" para instalar as dependencias necessárias.
 
 No mesmo terminal execute o comando "npm run dev", após isso, o servidor deverá começar a rodar!
+
+!! É PRECISO ALTERAR A STRING DE CONEXÃO COM O BANCO DE DADOS, INSERIDO A SENHA CORRETA
