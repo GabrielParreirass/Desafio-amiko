@@ -15,17 +15,23 @@ Para o desenvolvimento, utilizei o MONGOdb como banco de dados e NodeJS junto co
 ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usuário
 
     app.get("/calls", async (req, res) => {
-    const roomNumber = req.body.roomNumber; //recebe o número do quarto que o usuário deseja checar os chamados
-  
+    
+    //recebe o número do quarto que o usuário deseja checar os chamados
+    const roomNumber = req.body.roomNumber; 
+
+    // define o numero do quarto como parêmetro de busca
     const filter = {
-      "hospital.roomNumber": roomNumber,  // define o numero do quarto como parêmetro de busca
+      "hospital.roomNumber": roomNumber,  
     };
-  
-    const chamadas = await Chamadas.find(filter); // busca as chamadas de acordo com o filtro definido
-  
-    if (chamadas.length > 0) {  // verifica se existem chamadas
+
+     // busca as chamadas de acordo com o filtro definido
+    const chamadas = await Chamadas.find(filter);
+
+    // verifica se existem chamadas
+    if (chamadas.length > 0) { 
+        // pega apenas as mensagens do chamado e as retorna para o usuário
       const calls = chamadas.map((i) => i.name);
-      res.send(calls);  // pega apenas as mensagens do chamado e as retorna para o usuário
+      res.send(calls);  
     } else {
       res.send("Nao existem chamadas registradas nesse apartamento!");
     }
