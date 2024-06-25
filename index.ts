@@ -42,12 +42,12 @@ app.get("/calls", async (req, res) => {
 
 app.post("/calls", async (req, res) => {
   const msg = req.body.msg;
-  const hospitalName = req.body.hospitalName;
-  const roomNumber = req.body.roomNumber;
+  const hospitalName = req.body.hospital.hospitalName;
+  const roomNumber = req.body.hospital.roomNumber;
 
   if (roomNumber > 0) {
     const chamadaCriada = await Chamadas.create({
-      name: msg,
+      name: name,
       hospital: {
         name: hospitalName,
         roomNumber: roomNumber,
