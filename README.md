@@ -13,7 +13,7 @@ POST -> Era preciso criar novos chamados para os quartos, usando como parâmetro
 Para o desenvolvimento, utilizei o MONGOdb como banco de dados e NodeJS junto com Express para o servidor
 
 ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usuário
-
+```javascript
     app.get("/calls", async (req, res) => {
     
     const roomNumber = req.body.roomNumber; 
@@ -33,11 +33,11 @@ ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usu
       res.send("Nao existem chamadas registradas nesse apartamento!");
     }
     });
-
+```
     
 
 ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo usuário e armazená-los no banco de dados e tratando as condições especificadas no desafio.
-
+```javascript
     app.post("/calls", async (req, res) => {
           const msg = req.body.msg;  
           const hospitalName = req.body.hospitalName; 
@@ -62,10 +62,10 @@ ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo 
             res.send("O número do quarto deve ser maior ou igual a 1");
           }
         });
-
+```
 
 Esquema de como os dados estão sendo armazenados no MONGOdb
-
+```typescript
     const ChamadaSchema = new mongoose.Schema({
         name: String,
         hospital: {
@@ -73,7 +73,7 @@ Esquema de como os dados estão sendo armazenados no MONGOdb
           roomNumber: Number,
         },
       });
-
+```
 
 # Como executar o código
 
