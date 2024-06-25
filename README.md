@@ -16,20 +16,17 @@ ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usu
 
     app.get("/calls", async (req, res) => {
     
-    //recebe o número do quarto que o usuário deseja checar os chamados
     const roomNumber = req.body.roomNumber; 
 
-    // define o numero do quarto como parêmetro de busca
     const filter = {
       "hospital.roomNumber": roomNumber,  
     };
 
-     // busca as chamadas de acordo com o filtro definido
     const chamadas = await Chamadas.find(filter);
 
-    // verifica se existem chamadas
+
     if (chamadas.length > 0) { 
-        // pega apenas as mensagens do chamado e as retorna para o usuário
+   
       const calls = chamadas.map((i) => i.name);
       res.send(calls);  
     } else {
@@ -42,12 +39,12 @@ ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usu
 ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo usuário e armazená-los no banco de dados e tratando as condições especificadas no desafio.
 
     app.post("/calls", async (req, res) => {
-          const msg = req.body.msg;  // recebe a mensagem inserida pelo usuário
-          const hospitalName = req.body.hospitalName; // recebe o nome do hospital
-          const roomNumber = req.body.roomNumber; // recebe o numero do quarto
+          const msg = req.body.msg;  
+          const hospitalName = req.body.hospitalName; 
+          const roomNumber = req.body.roomNumber; 
         
-          if (roomNumber > 0) { // trata condicao do numero ser maior que 0
-            const chamadaCriada = await Chamadas.create({ // cria um novo chamado com as infos recebidas
+          if (roomNumber > 0) { 
+            const chamadaCriada = await Chamadas.create({ 
               name: msg,
               hospital: {
                 name: hospitalName,
@@ -55,12 +52,12 @@ ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo 
               },
             });
         
-            if (chamadaCriada) { // caso a chamada seja criada com sucesso
+            if (chamadaCriada) { 
               res.send("Chamado criado com sucesso");
-            } else { // casa aconteça um erro
+            } else {
               res.send("Erro na criação do chamdo");
             }
-          } else { // se o numero for menor ou igual a 0
+          } else { 
             res.status(503);
             res.send("O número do quarto deve ser maior ou igual a 1");
           }
