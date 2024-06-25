@@ -65,7 +65,7 @@ ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo 
 
 Para a execução do código na sua máquina ser bem sucedida, é necessária a clonagem do projeto ou o download dos arquivos para seu computador.
 
-Abra a pasta onde se encontram os arquivos pelo terminal e insira o código "npm i" para instalar as dependencias necessárias.
+Pelo terminal, abra a pasta onde se econtram os aruivos e insira o código "npm i" para instalar as dependencias necessárias.
 
 No mesmo terminal execute o comando "npm run dev", após isso, o servidor deverá começar a rodar!
 
