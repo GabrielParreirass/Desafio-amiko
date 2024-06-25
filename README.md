@@ -12,7 +12,7 @@ POST -> Era preciso criar novos chamados para os quartos, usando como parâmetro
 
 Para o desenvolvimento, utilizei o MONGOdb como banco de dados e NodeJS junto com Express para o servidor
 
-ROTA GET, responsável por ler as chamadas armezenadas e retorná-las para o usuário
+ROTA GET, responsável por ler as chamadas armazenadas e retorná-las para o usuário
 
     app.get("/calls", async (req, res) => {
     const roomNumber = req.body.roomNumber;
@@ -69,4 +69,4 @@ Abra a pasta onde se encontram os arquivos pelo terminal e insira o código "npm
 
 No mesmo terminal execute o comando "npm run dev", após isso, o servidor deverá começar a rodar!
 
-!! É PRECISO ALTERAR A STRING DE CONEXÃO COM O BANCO DE DADOS, INSERIDO A SENHA CORRETA
+!! É PRECISO ALTERAR A STRING DE CONEXÃO COM O BANCO DE DADOS, INSERINDO A SENHA CORRETA
