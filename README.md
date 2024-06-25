@@ -64,6 +64,17 @@ ROTA POST, responsável por receber os dados de uma nova chamada inseridos pelo 
         });
 
 
+Esquema de como os dados estão sendo armazenados no MONGOdb
+
+    const ChamadaSchema = new mongoose.Schema({
+        name: String,
+        hospital: {
+          name: String,
+          roomNumber: Number,
+        },
+      });
+
+
 # Como executar o código
 
 Para a execução do código na sua máquina ser bem sucedida, é necessária a clonagem do projeto ou o download dos arquivos para seu computador.
